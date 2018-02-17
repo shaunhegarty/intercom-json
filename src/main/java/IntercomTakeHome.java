@@ -1,3 +1,4 @@
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.List;
@@ -10,16 +11,31 @@ public class IntercomTakeHome {
 
     public static void main(String[] args) throws IOException {
         IntercomGuestList guestList = new IntercomGuestList();
-        String customerJson  = JSONFixer.readCustomerJsonFile(url);
+
+        String jsonUrl;
+        if(args.length == 0 || args[0] != null){
+            jsonUrl = url;
+        } else {
+            jsonUrl = args[0];
+        }
+        String customerJson = JSONFixer.readCustomerJsonFile(jsonUrl);
 
         guestList.buildGuestList(customerJson, partyRadius, intercomLocation);
         List<IntercomCustomer> partyList = guestList.getGuestList();
 
-        for(IntercomCustomer customer : partyList){
-            double distance = guestList.getDistanceToParty(customer, intercomLocation);
-            DecimalFormat formatter = new DecimalFormat("#,###.00");
-            System.out.println(customer + "; Distance: " + formatter.format(distance/1000) + " km");
+        try(FileOutputStream outputStream = new FileOutputStream("guestlist.txt")){
+            StringBuilder output = new StringBuilder();
+            for(IntercomCustomer customer : partyList){
+                double distance = guestList.getDistanceToParty(customer, intercomLocation);
+                DecimalFormat formatter = new DecimalFormat("#,###.00");
+                output.append(customer + "; Distance: " + formatter.format(distance/1000) + " km \n");
+            }
+            byte[] outputBytes = output.toString().getBytes();
+            outputStream.write(outputBytes);
+
         }
+
+
     }
 
 }
