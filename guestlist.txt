@@ -1,0 +1,16 @@
+4 : Ian Kehoe; Distance: 10.57 km 
+5 : Nora Dempsey; Distance: 23.29 km 
+6 : Theresa Enright; Distance: 24.09 km 
+8 : Eoin Ahearn; Distance: 83.53 km 
+11 : Richard Finnegan; Distance: 38.14 km 
+12 : Christina McArdle; Distance: 41.77 km 
+13 : Olive Ahearn; Distance: 62.23 km 
+15 : Michael Ahearn; Distance: 43.72 km 
+17 : Patricia Cahill; Distance: 96.08 km 
+23 : Eoin Gallagher; Distance: 82.69 km 
+24 : Rose Enright; Distance: 89.03 km 
+26 : Stephen McArdle; Distance: 98.87 km 
+29 : Oliver Ahearn; Distance: 72.20 km 
+30 : Nick Enright; Distance: 82.64 km 
+31 : Alan Behan; Distance: 44.29 km 
+39 : Lisa Ahearn; Distance: 38.36 km 
